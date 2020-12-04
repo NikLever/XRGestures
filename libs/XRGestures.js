@@ -1,6 +1,6 @@
 import * as THREE from './three/three.module.js';
 
-class ControllerGestures extends THREE.EventDispatcher{
+class XRGestures extends THREE.EventDispatcher{
     constructor( renderer ){
         super();
         
@@ -209,4 +209,4 @@ class ControllerGestures extends THREE.EventDispatcher{
     }
 }
 
-export { ControllerGestures };
+export { XRGestures };
