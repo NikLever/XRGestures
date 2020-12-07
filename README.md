@@ -1,7 +1,10 @@
 # XRGestures
 Add touch gestures to a WebXR AR app without using dom-overlay.
 
+![XRGestures](assets/splash.jpg)
+
 ## You-Tube tutorial
+- [XRGestures tutorial](https://youtu.be/2OLP4ZEYTUI)
 
 ## Get Started
 Add XRGestures.js to your project

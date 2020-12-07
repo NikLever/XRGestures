@@ -153,6 +153,12 @@ class App{
         
         const btn = new ARButton( this.renderer, { onSessionStart, onSessionEnd });
 
+		this.gestures = new XRGestures( this.renderer );
+        this.gestures.addEventListener( 'tap', (ev)=>{
+            console.log( 'tap' ); 
+            self.ui.updateElement('info', 'tap' );
+        });
+        
         this.renderer.setAnimationLoop( this.render.bind(this) );
     }
     

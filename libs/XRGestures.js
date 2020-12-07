@@ -5,7 +5,7 @@ class XRGestures extends THREE.EventDispatcher{
         super();
         
         if (renderer === undefined){
-            console.error('ControllerGestures must be passed a renderer');
+            console.error('XRGestures must be passed a renderer');
             return;
         }
         
@@ -57,7 +57,7 @@ class XRGestures extends THREE.EventDispatcher{
             data.endTime = clock.getElapsedTime();
             const startToEnd = data.endTime - data.startTime;
             
-            //console.log(`ControllerGestures.onSelectEnd: startToEnd:${startToEnd.toFixed(2)} taps:${data.taps}`);
+            //console.log(`XRGestures.onSelectEnd: startToEnd:${startToEnd.toFixed(2)} taps:${data.taps}`);
             
             if (self.type === 'swipe'){
                 const direction = ( self.controller1.position.y < data.startPosition.y) ? "DOWN" : "UP";
@@ -90,7 +90,7 @@ class XRGestures extends THREE.EventDispatcher{
             result = this.controller1.userData.selectPressed && this.controller2.userData.selectPressed;
         }
         const self = this;
-        console.log( `ControllerGestures multiTouch: ${result} touchCount:${self.touchCount}`);
+        console.log( `XRGestures multiTouch: ${result} touchCount:${self.touchCount}`);
         return result;
     }
     
@@ -101,7 +101,7 @@ class XRGestures extends THREE.EventDispatcher{
         }else{
             result = this.controller1.userData.selectPressed || this.controller2.userData.selectPressed;
         }
-        //console.log( `ControllerGestures touch: ${result}`);
+        //console.log( `XRGestures touch: ${result}`);
         return result;
     }
     
@@ -130,7 +130,7 @@ class XRGestures extends THREE.EventDispatcher{
             //Only dispatch event after double click limit is passed
             elapsedTime = this.clock.getElapsedTime() - data1.endTime;
             if (elapsedTime > this.doubleClickLimit){
-                //console.log( `ControllerGestures.update dispatchEvent taps:${data1.taps}` );
+                //console.log( `XRGestures.update dispatchEvent taps:${data1.taps}` );
                 switch( data1.taps ){
                     case 1:
                         this.dispatchEvent( { type: 'tap', position: this.controller1.position, matrixWorld: this.controller1.matrixWorld } );
